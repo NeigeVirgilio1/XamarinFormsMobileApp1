@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:XamarinFormsMobileApp1="clr-namespace:XamarinFormsMobileApp1"
+            x:Class="XamarinFormsMobileApp1.Tabs" >
+
+
+    <NavigationPage.TitleView >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Text="WhatsApp" Grid.Column="0" FontSize="Title" TextColor="#DBD0CD" />
+
+            <Label Text="&#x2315;" FontSize="Title" Grid.Column="5" Grid.Row="0" TextColor="#DBD0CD" />
+            <Label Text="&#x22EE;" Grid.Column="6" Grid.Row="0" TextColor="#DBD0CD" FontSize="Title" />
+        </Grid>
+    </NavigationPage.TitleView>
+    <!--Pages can be added as references or inline-->
+
+    <XamarinFormsMobileApp1:Camera Title="&#x1F4F7;" />
+    <XamarinFormsMobileApp1 Title="CHATS" />
+    <XamarinFormsMobileApp1:StatusPage Title="STATUS" />
+    <XamarinFormsMobileApp1:StatusPage Title="CALLS" />
+
+</TabbedPage> 

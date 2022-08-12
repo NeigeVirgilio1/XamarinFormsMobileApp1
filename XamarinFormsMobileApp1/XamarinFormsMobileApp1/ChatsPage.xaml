@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:XamarinFormsMobileApp1"
+             x:Class="XamarinFormsMobileApp1.ChatsPage">
+
+
+    <ContentPage.Content>
+        <ListView Margin ="5" ItemsSource="{Binding Chats}" HasUnevenRows="True" SelectionMode="None" SeparatorVisibility="None">
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:Chat">
+                    <ViewCell>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="15" Grid.Row="0" Grid.Column="1"/>
+                            <Label Text="{Binding Time}" Grid.Row="0" Grid.Column="2" HorizontalOptions="End"/>
+                            <Label Text="{Binding Seen}" Grid.Row="1" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

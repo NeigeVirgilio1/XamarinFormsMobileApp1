@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinFormsMobileApp1.MainPage" NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame Padding="24" CornerRadius="0" BackgroundColor="#2B2624">
+
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="WhatsApp" Grid.Column="0" FontSize="Title" TextColor="#DBD0CD"/>
+
+                    <Label Text="&#x2315;" FontSize="Title" Grid.Column="5" Grid.Row="0" TextColor="#DBD0CD" />
+                    <Label Text="&#x22EE;" Grid.Column="6" Grid.Row="0" TextColor="#DBD0CD" FontSize="Title" />
+                </Grid>
+                <Grid>
+                    <Label Text="CHATS" Grid.Column="0" Grid.Row="0" TextColor="#DBD0CD"/>
+                    <Label Text=" STATUS" Grid.Column="1" Grid.Row="0" TextColor="#DBD0CD"/>
+                    <Label Text="CALLS" Grid.Column="3" Grid.Row="0" TextColor="#DBD0CD"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <StackLayout>
+            <Label Text="Hi"/>
+            <!---->
+
+            <CollectionView ItemsSource="{Binding Monkeys}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                       Source="{Binding ImageUrl}"
+                       Aspect="AspectFill"
+                       HeightRequest="60"
+                       WidthRequest="60" />
+                            <Label Grid.Column="1"
+                       Text="{Binding Name}"
+                       FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding Location}"
+                       FontAttributes="Italic"
+                       VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <!-- -->
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
+
+    

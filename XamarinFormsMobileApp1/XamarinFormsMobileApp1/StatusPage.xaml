@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:XamarinFormsMobileApp1"
+             x:Class="XamarinFormsMobileApp1.StatusPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="allan.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+                <Label Text="My status" Grid.Row="0" Grid.Column="1" FontAttributes="Bold"/>
+                <Label Text="Yesterday" Grid.Row="1" Grid.Column="1"/>
+                <Label Text="&#x22EE;" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+            <Label Text="Recent updates" Margin="5"/>
+            <ListView Margin ="5" ItemsSource="{Binding Status}" HasUnevenRows="True" SelectionMode="None" SeparatorVisibility="None">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Status">
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0"  Grid.RowSpan="2" Aspect="AspectFit" />
+                                <Label Text="{Binding Name}"  Grid.Row="0" Grid.Column="1" FontAttributes="Bold" />
+                                <Label Text="{Binding Seen, StringFormat=' {0:t}'}" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" />
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+

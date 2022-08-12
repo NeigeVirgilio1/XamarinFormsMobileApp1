@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:Xamarin_Assignment"
+             x:Class="XamarinFormsMobileApp1.CallsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView Margin ="50,5" ItemsSource="{Binding Call}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Call">
+                        <ViewCell>
+                            <StackLayout Padding="13,0"  >
+                                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                <Label Text="{Binding Seen, StringFormat='Lastseen {0:t}'}" TextColor="Gray" FontSize="Small" />
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
